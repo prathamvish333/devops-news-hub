@@ -5,22 +5,31 @@ const DevOpsButtons = () => {
   return (
     <div className="flex items-center gap-2">
       <Button
-        variant="outline"
+        variant="ghost"
         size="sm"
-        className="text-xs border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+        className="text-xs text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 gap-1"
         onClick={() => window.open("https://argocd.example.com", "_blank")}
       >
-        <ExternalLink className="h-3 w-3 mr-1" />
+        <ExternalLink className="h-3 w-3" />
         ArgoCD
       </Button>
       <Button
-        variant="outline"
+        variant="ghost"
         size="sm"
-        className="text-xs border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+        className="text-xs text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 gap-1"
         onClick={() => window.open("https://grafana.example.com", "_blank")}
       >
-        <ExternalLink className="h-3 w-3 mr-1" />
+        <ExternalLink className="h-3 w-3" />
         Grafana
+      </Button>
+      <Button
+        variant="ghost"
+        size="sm"
+        className="text-xs text-primary-foreground/90 hover:text-primary-foreground hover:bg-primary-foreground/10 gap-1"
+        onClick={() => window.open("https://jenkins.example.com", "_blank")}
+      >
+        <ExternalLink className="h-3 w-3" />
+        Jenkins
       </Button>
     </div>
   );
