@@ -1,5 +1,5 @@
 import logo from "@/assets/logo.png";
-import { Search, Menu, Linkedin, Github, FileText } from "lucide-react";
+import { Search, Menu, Linkedin, Github, FileText, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DevOpsButtons from "./DevOpsButtons";
 import { Link } from "react-router-dom";
@@ -69,7 +69,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 className="h-9 w-9 text-muted-foreground hover:text-foreground hover:bg-secondary"
-                onClick={() => window.open("https://github.com/prathamvishwakarma", "_blank")}
+                onClick={() => window.open("https://github.com/prathamvish333", "_blank")}
                 title="GitHub"
               >
                 <Github className="h-4 w-4" />
@@ -80,8 +80,8 @@ const Header = () => {
                   size="sm"
                   className="text-xs border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-1.5"
                 >
-                  <FileText className="h-3.5 w-3.5" />
-                  Resume
+                  <User className="h-3.5 w-3.5" />
+                  About Me
                 </Button>
               </Link>
             </div>
