@@ -2,8 +2,15 @@ import logo from "@/assets/logo.png";
 import { Search, Menu, Linkedin, Github, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DevOpsButtons from "./DevOpsButtons";
+import { Link } from "react-router-dom";
 
-const navItems = ["Home", "India", "World", "Tech", "Business", "Sports", "Entertainment"];
+const navItems = [
+  { name: "Home", path: "/" },
+  { name: "Tech", path: "/" },
+  { name: "Cloud", path: "/" },
+  { name: "DevOps", path: "/" },
+  { name: "About", path: "/about" },
+];
 
 const Header = () => {
   const currentDate = new Date().toLocaleDateString('en-US', {
@@ -27,21 +34,22 @@ const Header = () => {
       <div className="container py-3">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
-          <a href="/" className="flex-shrink-0">
+          <Link to="/" className="flex-shrink-0">
             <img src={logo} alt="Yashasvi Duniya" className="h-10 md:h-12" />
-          </a>
+          </Link>
           
           {/* Navigation - center */}
           <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => (
-              <Button
-                key={item}
-                variant="ghost"
-                size="sm"
-                className="text-foreground hover:text-primary hover:bg-secondary font-medium"
-              >
-                {item}
-              </Button>
+              <Link key={item.name} to={item.path}>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-foreground hover:text-primary hover:bg-secondary font-medium"
+                >
+                  {item.name}
+                </Button>
+              </Link>
             ))}
           </nav>
           
@@ -52,7 +60,7 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 className="h-9 w-9 text-muted-foreground hover:text-[#0A66C2] hover:bg-[#0A66C2]/10"
-                onClick={() => window.open("https://linkedin.com/in/yourprofile", "_blank")}
+                onClick={() => window.open("https://www.linkedin.com/in/prathamvishwakarma/", "_blank")}
                 title="LinkedIn"
               >
                 <Linkedin className="h-4 w-4" />
@@ -61,20 +69,21 @@ const Header = () => {
                 variant="ghost"
                 size="icon"
                 className="h-9 w-9 text-muted-foreground hover:text-foreground hover:bg-secondary"
-                onClick={() => window.open("https://github.com/yourprofile", "_blank")}
+                onClick={() => window.open("https://github.com/prathamvishwakarma", "_blank")}
                 title="GitHub"
               >
                 <Github className="h-4 w-4" />
               </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="text-xs border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-1.5"
-                onClick={() => window.open("/resume.pdf", "_blank")}
-              >
-                <FileText className="h-3.5 w-3.5" />
-                Resume
-              </Button>
+              <Link to="/about">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-xs border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-1.5"
+                >
+                  <FileText className="h-3.5 w-3.5" />
+                  Resume
+                </Button>
+              </Link>
             </div>
             
             <Button variant="ghost" size="icon" className="h-9 w-9">
