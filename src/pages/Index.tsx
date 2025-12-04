@@ -9,6 +9,7 @@ const featuredNews = {
   category: "DevOps",
   image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=450&fit=crop",
   timeAgo: "2 hours ago",
+  slug: "ci-cd-pipeline-argocd-kubernetes"
 };
 
 const newsItems = [
@@ -17,36 +18,35 @@ const newsItems = [
     category: "Tech",
     image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=300&h=200&fit=crop",
     timeAgo: "3 hours ago",
+    slug: "microservices-docker-kubernetes"
   },
   {
     title: "Infrastructure as Code: Terraform Best Practices for Production",
     category: "Cloud",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=300&h=200&fit=crop",
     timeAgo: "4 hours ago",
+    slug: "terraform-best-practices"
   },
   {
     title: "Monitoring Kubernetes Clusters with Prometheus and Grafana",
     category: "Monitoring",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop",
     timeAgo: "5 hours ago",
+    slug: "prometheus-grafana-monitoring"
   },
   {
     title: "PostgreSQL Performance Tuning for High-Traffic Applications",
     category: "Database",
     image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=300&h=200&fit=crop",
     timeAgo: "6 hours ago",
+    slug: "postgresql-performance"
   },
   {
     title: "FastAPI: Building High-Performance REST APIs with Python",
     category: "Backend",
     image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=300&h=200&fit=crop",
     timeAgo: "7 hours ago",
-  },
-  {
-    title: "AWS EKS vs GKE: Choosing the Right Kubernetes Platform",
-    category: "Cloud",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=300&h=200&fit=crop",
-    timeAgo: "8 hours ago",
+    slug: "fastapi-rest-apis"
   },
 ];
 
@@ -68,7 +68,7 @@ const Index = () => {
           <Badge variant="secondary" className="bg-accent-foreground text-accent font-bold shrink-0">
             LIVE
           </Badge>
-          <div className="flex gap-8 animate-marquee whitespace-nowrap">
+          <div className="flex gap-8 whitespace-nowrap">
             {breakingNews.map((news, index) => (
               <span key={index} className="text-sm font-medium">
                 • {news}
