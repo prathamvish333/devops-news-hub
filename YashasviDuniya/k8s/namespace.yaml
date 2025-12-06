@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: yashasvi-duniya
+  labels:
+    app.kubernetes.io/name: yashasvi-duniya
+    app.kubernetes.io/managed-by: argocd
